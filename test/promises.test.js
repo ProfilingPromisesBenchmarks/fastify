@@ -21,9 +21,11 @@ const opts = {
 }
 
 fastify.get('/return', opts, function (req, reply) {
-  const promise = new Promise((resolve, reject) => {
-    resolve({ hello: 'world' })
-  })
+  // console.log("*** EXECUTING test/promises.test.js:24:26");
+  // const promise = new Promise((resolve, reject) => {
+  //   resolve({ hello: 'world' })
+  // })
+  const promise = Promise.resolve({ hello: 'world' });
   return promise
 })
 
